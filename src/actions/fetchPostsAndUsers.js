@@ -7,7 +7,10 @@ export default () => async (dispatch, getState) => {
   await dispatch(fetchPosts());
   const posts = getState().posts;
   if (posts.data) {
-    const userIds = _.uniq(_.map(posts.data, 'userId'));
-    userIds.forEach((id) => dispatch(fetchUser(id)));
+    _.chain(posts.data)
+      .map('userId')
+      .uniq()
+      .forEach((id) => dispatch(fetchUser(id)))
+      .value();
   }
 };
