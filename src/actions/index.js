@@ -1,4 +1,5 @@
-import fetchPosts from './fetchPosts';
-import fetchUser from './fetchUser';
+// import fetchPosts from './fetchPosts';
+// import fetchUser from './fetchUser';
+import fetchPostsAndUsers from './fetchPostsAndUsers';
 
-export { fetchPosts, fetchUser };
+export { fetchPostsAndUsers };
